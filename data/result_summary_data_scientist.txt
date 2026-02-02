@@ -1,0 +1,9 @@
+Result Summary – Data Scientist
+
+I am a Data Scientist with a strong focus on Generative AI and modern ML systems.
+My work involves building end-to-end RAG pipelines, vector databases, and
+LLM-powered applications using tools like LlamaIndex and Gemini.
+
+Key strengths include data analysis, machine learning, deep learning,
+prompt engineering, and scalable AI system design. I am particularly
+interested in applying GenAI to real-world problem solving and intelligent automation.
