@@ -1,57 +1,42 @@
-# Question-Answering System with RAG Architecture
+# QA System with RAG
 
-This project implements a Retrieval-Augmented Generation (RAG) based question-answering system that leverages Google's Gemini language model and LlamaIndex for intelligent document querying. The system processes text documents, creates vector embeddings, and enables semantic search capabilities to answer queries based on the provided context.
+A question-answering system built with RAG (Retrieval-Augmented Generation) using LlamaIndex and Google's Gemini model. Feed it your documents and ask questions—it finds relevant information and generates accurate answers.
 
-## Overview
+## How It Works
 
-The application demonstrates a practical implementation of RAG architecture, where documents are first indexed using vector embeddings and then queried through a language model. This approach combines the strengths of information retrieval with the natural language understanding capabilities of large language models, resulting in contextually accurate and relevant responses.
+The system follows a simple pipeline:
 
-## Technical Architecture
+1. **Read Documents** - Loads text files from the `data/` folder
+2. **Build Vector Index** - Converts documents into embeddings using Gemini's embedding model
+3. **Store Locally** - Saves the index in `storage/` for reuse
+4. **Query** - Retrieves relevant chunks and uses Gemini LLM to generate answers
 
-The system is organized into modular components that handle distinct aspects of the RAG pipeline:
+Built with LlamaIndex for document processing and vector storage. Uses Gemini for both embeddings and response generation.
 
-- **Data Ingestion**: Reads and processes text documents from the data directory, preparing them for indexing
-- **Index Building**: Converts documents into vector embeddings using Google's Gemini embedding model, creating a searchable vector store
-- **Index Persistence**: Stores the generated index locally in the storage directory, allowing for efficient reuse without reprocessing
-- **Query Engine**: Implements the retrieval and generation pipeline, fetching relevant document chunks and synthesizing answers using the Gemini LLM
+## Technical Stack
 
-The application utilizes LlamaIndex as the orchestration framework, which handles document chunking, embedding generation, vector storage, and query processing. The Gemini model serves dual purposes: generating embeddings for semantic search and producing natural language responses based on retrieved context.
+- **LlamaIndex** - Handles document chunking, indexing, and retrieval
+- **Google Gemini** - Embedding model + LLM for answer generation
+- **Vector Storage** - Persistent local storage for fast querying
+- **Temperature: 0.15** - Low temperature for consistent, factual responses
 
-## Key Features
+## Setup & Run
 
-- Vector-based semantic search for accurate information retrieval
-- Persistent storage of indexes to minimize redundant processing
-- Configurable LLM parameters for response generation
-- Modular architecture enabling easy extension and maintenance
-- Environment-based configuration for secure API key management
+1. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
 
-## Getting Started
+2. Get your API key from [Google AI Studio](https://makersuite.google.com/app/apikey)
 
-### Prerequisites
+3. Create `.env` file:
+```
+GOOGLE_API_KEY=your_api_key_here
+```
 
-Ensure you have Python 3.8 or higher installed on your system.
-
-### Installation
-
-1. Clone the repository and navigate to the project directory
-
-2. Install the required dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. Obtain a Google API key from [Google AI Studio](https://makersuite.google.com/app/apikey)
-
-4. Create a `.env` file in the root directory and add your API key:
-   ```
-   GOOGLE_API_KEY=your_api_key_here
-   ```
-
-### Running the Application
-
-Execute the main application:
+4. Run the app:
 ```bash
 python app.py
 ```
 
-The system will process the documents in the data directory, build the vector index, and answer the predefined query. You can modify the query in [app.py](app.py) to ask different questions based on your document content.
+That's it. The system will index your documents and answer the query defined in [app.py](app.py). Change the query to ask different questions.
