@@ -2,6 +2,8 @@
 
 A question-answering system built with RAG (Retrieval-Augmented Generation) using LlamaIndex and Google's Gemini model. Feed it your documents and ask questions—it finds relevant information and generates accurate answers.
 
+<img width="400" height="200" alt="image" src="https://github.com/user-attachments/assets/17d7df0c-013d-48fa-8872-bfae046b6177" />
+
 ## How It Works
 
 The system follows a simple pipeline:
@@ -19,6 +21,11 @@ Built with LlamaIndex for document processing and vector storage. Uses Gemini fo
 - **Google Gemini** - Embedding model + LLM for answer generation
 - **Vector Storage** - Persistent local storage for fast querying
 - **Temperature: 0.15** - Low temperature for consistent, factual responses
+
+## My Input & output (Tested)
+
+<img width="756" height="501" alt="image" src="https://github.com/user-attachments/assets/1f8b4b79-2cf1-4c18-a363-3a030e52251a" />
+
 
 ## Setup & Run
 
